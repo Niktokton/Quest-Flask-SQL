@@ -1,0 +1,19 @@
+.center2 {
+	width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    background-image: url('background/main.png');
+    background-size: cover
+}
+
+h1 {
+  color: white;
+}
+
+.tbl {
+  color: white;
+  font-size: 24px
+}
