@@ -1,6 +1,19 @@
 {% extends "quest.html" %}
 
 {% block content %}
-    <h1>{{ riddle }}</h1>
-  <a href="/quest5" class='btn btn-primary'>Вперед</a>
+        <script src="{{ url_for('static', filename='script/quest.js') }}"></script>
+        <h1>{{ riddle }}</h1>
+        <h2>Изначально в аквариуме плавает 10 рыбок</h2>
+        <h2>Однако спустя неделю 2 из них утонули, 4 – уплыли, а еще 3 – погибли</h2>
+        <h2>Сколько рыбок осталось в аквариуме?</h2>
+        <form name="user" action="/quest4" method="POST" class="{{ fm }}">
+            <p>
+                <input type='text' name="qst1" id="qst1" placeholder='Ответ'>
+                <input type="submit" value="Подтвердить" onclick="check4();">
+            </p>
+        </form>
+        <div id="q1" class="{{ hide }}">
+            <a>Их же никто из аквариума не вытащил</a><br>
+            <a href="/quest5" class='btn btn-primary'>Дальше</a>
+        </div>
 {% endblock %}

@@ -1,6 +1,20 @@
 {% extends "quest.html" %}
 
 {% block content %}
-    <h1>{{ riddle }}</h1>
-  <a href="/quest8" class='btn btn-primary'>Вперед</a>
+        <script src="{{ url_for('static', filename='script/quest.js') }}"></script>
+        <h1>{{ riddle }}</h1>
+        <h2>Давайте снова вернёмся к анекдотам</h2>
+        <h2>Летели два верблюда, один рыжий, второй - налево</h2>
+        <h2>Сколько весит килограмм асфальта, если ёжику 24 года</h2>
+        <form name="user" action="/quest7" method="POST" class="{{ fm }}">
+            <p>
+                <input type='text' name="qst1" id="qst1" placeholder='Ответ'>
+                <input type="submit" value="Подтвердить" onclick="check7();">
+            </p>
+        </form>
+        <div id="q1" class="{{ hide }}">
+            <a>Ответ находится в самом вопросе</a><br>
+            <a href="/quest8" class='btn btn-primary'>Дальше</a>
+        </div>
+        <h3>P.S. В ответ пишите число</h3>
 {% endblock %}

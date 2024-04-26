@@ -2,3 +2,37 @@
     color: white;
     font-size: 20px
 }
+
+body {
+    background-color: black;
+    background-size: cover
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+  font-size: 24px
+}
+
+a {
+  color: white;
+  font-size: 24px
+}
+
+.hidden {
+  display:none;
+}
+
+.center2 {
+	width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

@@ -1,6 +1,24 @@
 {% extends "quest.html" %}
 
 {% block content %}
-    <h1>{{ riddle }}</h1>
-  <a href="/quest4" class='btn btn-primary'>Вперед</a>
+        <script src="{{ url_for('static', filename='script/quest.js') }}"></script>
+        <h1>{{ riddle }}</h1>
+        <h2>Теперь попробуем решить задачку в виде анекдота</h2>
+        <h2>Бесконечное число математиков заходит в бар.
+            Первый говорит: «Мне кружку пива!».
+            Второй говорит: «Мне половину кружки пива!»
+            Третий говорит: «Мне четверть кружки пива!»
+            Четвертый говорит: «Мне 1/8 кружки пива!»</h2>
+        <h2>А Бармен им говорит: «Да знаю я вас!», и наливает им...</h2>
+        <h2>Сколько литров пива нальёт бармен?</h2>
+        <form name="user" action="/quest3" method="POST" class="{{ fm }}">
+            <p>
+                <input type='text' name="qst1" id="qst1" placeholder='Ответ'>
+                <input type="submit" value="Подтвердить" onclick="check3();">
+            </p>
+        </form>
+        <div id="q1" class="{{ hide }}">
+            <a>Немного меньше, но в целых числах правильно</a><br>
+            <a href="/quest4" class='btn btn-primary'>Дальше</a>
+        </div>
 {% endblock %}

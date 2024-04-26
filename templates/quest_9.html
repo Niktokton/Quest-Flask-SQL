@@ -1,6 +1,19 @@
 {% extends "quest.html" %}
 
 {% block content %}
-    <h1>{{ riddle }}</h1>
-  <a href="/quest10" class='btn btn-primary'>Вперед</a>
+    <script src="{{ url_for('static', filename='script/quest.js') }}"></script>
+        <h1>{{ riddle }}</h1>
+        <h2>На склад привезли три машины для напитков. На них написано 'чай', 'кофе' и 'случайно'</h2>
+        <h2>Но из-за производственного брака надписи оказались перепутаны</h2>
+        <h2>Вопрос: В каком автомате нужно заказать напиток чтобы учадать два остальных с первого раза</h2>
+        <form name="user" action="/quest9" method="POST" class="{{ fm }}">
+            <p>
+                <input type='text' name="qst1" id="qst1" placeholder='Ответ'>
+                <input type="submit" value="Подтвердить" onclick="check9();">
+            </p>
+        </form>
+        <div id="q1" class="{{ hide }}">
+            <a>Верно, так как в нём гарантированно только один вид напитка</a><br>
+            <a href="/quest10" class='btn btn-primary'>Дальше</a>
+        </div>
 {% endblock %}

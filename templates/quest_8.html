@@ -1,6 +1,20 @@
 {% extends "quest.html" %}
 
 {% block content %}
-    <h1>{{ riddle }}</h1>
-  <a href="/quest9" class='btn btn-primary'>Вперед</a>
+    <script src="{{ url_for('static', filename='script/quest.js') }}"></script>
+        <h1>{{ riddle }}</h1>
+        <h2>И наконец мы прешли к самым сложным задачкам, существующим в интернете</h2>
+        <h2>Загадки для первокласников</h2>
+        <h2>Вопрос: Назовите номер парковочного места, которое занимает автомобиль.</h2>
+        <form name="user" action="/quest8" method="POST" class="{{ fm }}">
+            <p>
+                <input type='text' name="qst1" id="qst1" placeholder='Ответ'>
+                <input type="submit" value="Подтвердить" onclick="check8();">
+            </p>
+        </form>
+        <div id="q1" class="{{ hide }}">
+            <a>Просто же, да?</a><br>
+            <a href="/quest9" class='btn btn-primary'>Дальше</a>
+        </div>
+        <img class="center2" src="static/styles/background/cars.png">
 {% endblock %}

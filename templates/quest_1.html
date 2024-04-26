@@ -1,19 +1,19 @@
 {% extends "quest.html" %}
 
 {% block content %}
-    <link rel="stylesheet" href="{{ url_for('static',filename='styles/quest1.css') }}">
-    <script src="{{ url_for('static', filename='script/quest1.js') }}"></script>
-    <h1>{{ riddle }}</h1>
-    <h2>Начнём с чего-то очень простого</h2>
-    <h2>Вопрос такой: сколько на заднем фоне пятиконечных звезд?</h2>
-    <form name="user" action="/quest1" method="POST" class="{{ fm }}">
-        <p>
-            <input type='text' name="qst1" id="qst1" placeholder='Ответ'>
-            <input type="submit" value="Подтвердить" onclick="check();">
-        </p>
-    </form>
-    <div id="q1" class="{{ hide }}">
-        <a>Правильный ответ!</a><br>
-        <a href="/quest2" class='btn btn-primary'>Дальше</a>
-    </div>
+        <script src="{{ url_for('static', filename='script/quest.js') }}"></script>
+        <h1>{{ riddle }}</h1>
+        <h2>Начнём с чего-то очень простого</h2>
+        <h2>Попробуй подобрать пароль для перехода к следующему вопросу</h2>
+        <h2>Подсказка: пароль очень простой</h2>
+        <form name="user" action="/quest1" method="POST" class="{{ fm }}">
+            <p>
+                <input type='text' name="qst1" id="qst1" placeholder='Ответ'>
+                <input type="submit" value="Подтвердить" onclick="check1();">
+            </p>
+        </form>
+        <div id="q1" class="{{ hide }}">
+            <a>Просто же, да?</a><br>
+            <a href="/quest2" class='btn btn-primary'>Дальше</a>
+        </div>
 {% endblock %}

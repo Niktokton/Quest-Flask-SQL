@@ -1,6 +1,20 @@
 {% extends "quest.html" %}
 
 {% block content %}
-    <h1>{{ riddle }}</h1>
-  <a href="/end" class='btn btn-primary'>Вперед</a>
+        <script src="{{ url_for('static', filename='script/quest.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/quest10.css') }}">
+        <h1>{{ riddle }}</h1>
+        <h2>Ну и под конец, филосовский вопрос от Жака Фреско</h2>
+        <h2>Был дан месяц на проект</h2>
+        <h2>Как можно было не сделать?</h2>
+        <form name="user" action="/quest10" method="POST" class="{{ fm }}">
+            <p>
+                <input type='text' name="qst1" id="qst1" placeholder='Ответ'>
+                <input type="submit" value="Подтвердить" onclick="check10();">
+            </p>
+        </form>
+        <div id="q1" class="{{ hide }}">
+            <a>Я тоже не знаю, так получилось</a><br>
+            <a href="/end" class='btn btn-primary'>Закончить</a>
+        </div>
 {% endblock %}
